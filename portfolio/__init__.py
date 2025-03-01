@@ -12,7 +12,8 @@ def create_app(test_config=None) -> Flask:
     )
 
     '''
-       The following lines will overrite the config defined above - applying the actual secret key.
+       The following lines will overrite the config defined above - 
+       applying the actual secret key.
     '''
     if test_config is None:
         # load the instance config, if it exists, when not testing
