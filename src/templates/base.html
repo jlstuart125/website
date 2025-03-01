@@ -1,19 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         {% block head %}
         <link rel="stylesheet" href="static/style.css" />
         <link rel="icon" href="static/image/favicon.png" />
-        <title>{% block title %}{% endblock %}Jacob Stuart</title>
+        <title>{% block title %}{% endblock %}-Jacob Stuart</title>
         {% endblock %}
     </head>
     <body>
-        <div id="content">{% block content %}{% endblock %}</div>
-        <h1 class="page-title">Hello!</h1>
-        <ul>
-            <li><a href="about">About Me</a></li>
-            <li><a href="hello">Greeting</a></li>
-            <li><a href="template">Template</a></li>            
+        <ul id="navigation">
+            {% for item in navigation %}
+                <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+            {% endfor %}
         </ul>
+        <div id="content">{% block content %}{% endblock %}</div>
         <div id="footer">
             {% block footer %}
             &copy; Copyright 2025 by <a href="http://domain.invalid/">you</a>.
